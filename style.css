@@ -1,0 +1,19 @@
+.centerBlock{
+  width: 800px;
+  background-color: #eff3s;
+  margin: 10px auto;
+}
+.middleBlock{
+  width: 700px;
+  background-color: #eff3s;
+  margin: 10px auto;
+}
+.blockBooks{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.remove{
+  float: right;
+  margin: 1px;
+}
