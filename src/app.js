@@ -212,6 +212,8 @@ var Course = React.createClass({
       <div className="centerBlock">
         <h3 className="bg-success">Curso {this.state.course.name} </h3>
         <div>
+          <div className="btn btn-default btn-warning glyphicon glyphicon-pencil remove" onClick={this.editObject}></div>
+          <div className="btn btn-default btn-danger glyphicon glyphicon-trash remove" onClick={this.removeObject}></div>
           <p> ID :
             <i> {this.state.course.id} </i>
           </p>
@@ -221,8 +223,6 @@ var Course = React.createClass({
           <p> Description :
             <i> {this.state.course.description} </i>
           </p>
-          <div className="btn btn-default btn-warning glyphicon glyphicon-pencil remove" onClick={this.editObject}></div>
-          <div className="btn btn-default btn-danger glyphicon glyphicon-trash remove" onClick={this.removeObject}></div>
           <ListTextBook textbooks={this.state.course.textbooks}  id={this.state.course.id}/>
           <span onClick={this.mensaje}>Click Here!</span>
           <br />

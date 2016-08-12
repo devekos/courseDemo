@@ -324,6 +324,8 @@ var Course = React.createClass({
       React.createElement(
         "div",
         null,
+        React.createElement("div", { className: "btn btn-default btn-warning glyphicon glyphicon-pencil remove", onClick: this.editObject }),
+        React.createElement("div", { className: "btn btn-default btn-danger glyphicon glyphicon-trash remove", onClick: this.removeObject }),
         React.createElement(
           "p",
           null,
@@ -360,8 +362,6 @@ var Course = React.createClass({
             " "
           )
         ),
-        React.createElement("div", { className: "btn btn-default btn-warning glyphicon glyphicon-pencil remove", onClick: this.editObject }),
-        React.createElement("div", { className: "btn btn-default btn-danger glyphicon glyphicon-trash remove", onClick: this.removeObject }),
         React.createElement(ListTextBook, { textbooks: this.state.course.textbooks, id: this.state.course.id }),
         React.createElement(
           "span",
