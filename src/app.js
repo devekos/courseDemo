@@ -265,8 +265,35 @@ var ListCourses = React.createClass({
             ]
           },
 
-      ]
+      ],
+      coursesoriginal:[
+          {
+          id: "123",
+          name: "Introduction to Advertising",
+          description: "Learn about advertising",
+          textbooks: [
+            {
+              author: "Joe Smith",
+              title: "Mobile Advertising Fundamentals"
+            },
+            {
+              author: "Eli Hinnegan",
+              title: "Introduction to Location-Based Advertising"
+            },
+            {
+              author: "Edward Bernays",
+              title: "Public Relations"
+            },
+          ]
+        },
+
+    ],
     };
+  },
+  componentWillMount: function(){
+    var arr = this.state.courses;
+    console.log(arr);
+    // this.setState({coursesoriginal:arr});
   },
   add: function(course) {
         var newCourse = this.refs.newCourse.value;
@@ -325,10 +352,16 @@ var ListCourses = React.createClass({
               this.add();
           }
   },
+  restore: function() {
+    var original = this.state.coursesoriginal;
+    console.log(original);
+    this.setState({courses:original});
+  },
   render: function() {
     return (
       <div>
         <header>
+          <div className="btn btn-warning glyphicon glyphicon-saved remove" onClick={this.restore}>Restore Data</div>
           <h3>Cursos Activos:</h3>
           <i>Total: {this.state.courses.length}</i>
         </header>
@@ -352,6 +385,7 @@ var Teacher = React.createClass({
       <div>
         <h1>Hi Teacher!</h1>
         <ListCourses />
+
       </div>
     );
   }
@@ -376,7 +410,6 @@ var Pais = React.createClass({
 ReactDOM.render(
   <div className="centerBlock">
     <Teacher />
-    <Pais />
   </div>
   ,
   document.getElementById('demo')
